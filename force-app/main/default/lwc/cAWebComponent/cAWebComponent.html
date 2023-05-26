@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Google Maps Directions" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Origin" value={origin} onchange={handleOriginChange}></lightning-input>
+            <lightning-input type="text" label="Destination" value={destination} onchange={handleDestinationChange}></lightning-input>
+            <lightning-button label="Get Directions" onclick={getDirections} class="slds-m-top_medium"></lightning-button>
+            <template if:true={result}>
+                <p>Distance: {result.distance}</p>
+                <p>Travel Time: {result.travelTime}</p>
+                <p>Cost of Travel: {result.cost}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
